@@ -1,7 +1,87 @@
+section header{
+    border-top: .1rem solid var(--stroke-color);
+    padding-block: 1.2rem 2.4rem;
+    font: var(--text-span);
+
+    a{
+        justify-self: end;
+        align-items: center;
+        gap: .8rem;
+
+        span{
+            background-image: url(../assets/ArrowRight.svg);
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+        &:hover span{
+            background-image: url(../assets/ArrowRightHover.svg);
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+    }
+}
+
+/*card com degrade*/
 #featured{
+    position: relative;
+    overflow: hidden;
+    border-radius: .8rem;
+    &::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        top: 50%;
+        background: linear-gradient(
+            180deg,
+            transparent 0%,
+            #020617 100%
+        );
+    }
+
     img{
         height: 100%;
         object-fit: cover;
         border-radius: .8rem;
+    }
+
+    figcaption{
+        position: absolute;
+        bottom: 0;
+        padding: 2.4rem;
+
+        &::has(.text-lg){
+            padding: 1.2rem;
+        }
+        
+        h2{
+            margin-top: .8rem;
+        }
+    }
+
+}
+
+#weekly {
+
+    &>div {
+        grid-template-columns: repeat(4, 29.2rem);
+    }
+
+    img {
+        height: 16rem;
+    }
+
+    figure {
+        position: relative;
+
+        .content-tag {
+            position: absolute;
+            top: .8rem;
+            left: .8rem;
+        }
+
+        p {
+            margin-top: .8rem;
+            font-weight: 800;
+        }
     }
 }
